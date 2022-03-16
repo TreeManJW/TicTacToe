@@ -1,0 +1,45 @@
+using System;
+
+public class Program
+{
+	char[, ] board = new char[3, 3]{{'-', '-', '-'}, {'-', '-', '-'}, {'-', '-', '-'}};
+	public void Main()
+	{
+		Prnt();
+	}
+
+	public void Prnt()
+	{
+		Console.WriteLine("{0} {1} {2}", board[0, 0], board[0, 1], board[0, 2]);
+		Console.WriteLine("{0} {1} {2}", board[1, 0], board[1, 1], board[1, 2]);
+		Console.WriteLine("{0} {1} {2}", board[2, 0], board[2, 1], board[2, 2]);
+		MoveX();
+		Console.WriteLine("{0} {1} {2}", board[0, 0], board[0, 1], board[0, 2]);
+		Console.WriteLine("{0} {1} {2}", board[1, 0], board[1, 1], board[1, 2]);
+		Console.WriteLine("{0} {1} {2}", board[2, 0], board[2, 1], board[2, 2]);
+		MoveO();
+	}
+
+	public void MoveX()
+	{
+		Console.WriteLine("X Move on x axis: ");
+		short xMoveX = Int16.Parse(Console.ReadLine());
+        Console.WriteLine("X Move on y axis: ");
+		short yMoveX = Int16.Parse(Console.ReadLine());
+		
+		board[yMoveX - 1, xMoveX - 1] = 'X';
+		
+		return;
+	}	
+		public void MoveO()
+	{
+		Console.WriteLine("O Move on x axis: ");
+		short xMoveO = Int16.Parse(Console.ReadLine());
+        Console.WriteLine("O Move on y axis: ");
+		short yMoveO = Int16.Parse(Console.ReadLine());
+		
+		board[yMoveO - 1, xMoveO - 1] = 'O';
+		
+		Prnt();
+	}
+}
